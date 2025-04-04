@@ -1,3 +1,32 @@
+function resetCookies() {
+  setCookie("modalsShown", "", -1);
+  localStorage.removeItem("cartidle_lastSongPeriod");
+  console.log("Cookies and storage reset");
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM fully loaded");
+  
+  // Force show modals for testing
+  const welcomeModal = document.getElementById('welcomeModal');
+  const instructionsModal = document.getElementById('instructionsModal');
+  
+  if (welcomeModal) {
+    welcomeModal.style.display = 'flex';
+    welcomeModal.style.opacity = '1';
+    console.log("Welcome modal should be visible now");
+  } else {
+    console.error("Welcome modal element not found!");
+  }
+  
+  // Check if cookie is set correctly
+  console.log("modalsShown cookie:", getCookie("modalsShown"));
+  
+  // Initialize game after ensuring modals are handled
+  initializeGame();
+});
+
 let totalGames = 0;
 let totalCorrect = 0;
 let currentWinStreak = 0;
@@ -886,8 +915,8 @@ const albumReleaseYears = {
 
 const now = new Date();
 const ref = new Date(2020, 0, 1, 0, 0, 0, 0);
-const diffHours = (now - ref) / (1 * 60 * 60);
-const periodIndex = Math.floor(diffHours / 1);
+const diffHours = (now - ref) / (1000 * 60 * 60);
+const periodIndex = Math.floor(diffHours / 12);
 const songIndex = ((periodIndex % songsDatabase.length) + songsDatabase.length) % songsDatabase.length;
 let randomSong = songsDatabase[songIndex];
 
@@ -1134,3 +1163,9 @@ showResultsButton.onclick = function() {
 };
 }
 });
+
+console.log("Document loaded");
+console.log("isNewSongPeriod:", isNewSongPeriod());
+console.log("cookieValue:", getCookie("modalsShown"));
+console.log("welcomeModal:", document.getElementById('welcomeModal'));
+console.log("instructionsModal:", document.getElementById('instructionsModal'));
