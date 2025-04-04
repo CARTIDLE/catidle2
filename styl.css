@@ -1,0 +1,387 @@
+@media screen and (max-width: 768px) {
+    #iconsContainer {
+        top: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+    
+    #iconsContainer img {
+        width: 36px; 
+    }
+}
+body {
+    background-color: #1c1c1c;
+    background-image: radial-gradient(circle at center, rgb(53,53,49), rgb(0,0,0));
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  #container {
+    margin: 1px auto;
+    width: 80%;
+    max-width: 600px;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    margin-bottom: 10px;
+    font-family: SimSun;
+  }
+  input:read-only {
+    opacity: 1;
+    cursor: not-allowed;
+  }
+  input:read-only::placeholder {
+    color: rgb(0, 0, 0);
+    opacity: 1;
+  }
+  #guessButton {
+    width: 25%;
+    padding: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    font-size: larger;
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    font-family: SimSun;
+  }
+  .tabela {
+    margin: 1px auto;
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  table {
+    width: 58%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 57px -16px rgba(255,255,255,1);
+    background-color: transparent;
+    
+  }
+  table, th, td {
+    border-collapse: separate;
+    border-spacing: 2px;
+    
+  }
+  th, td {
+    border: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    padding: 7px;
+    font-weight: bold;
+    
+    
+  }
+  thead th:nth-child(1) { width: 23%; }
+  thead th:nth-child(3) { width: 16%; }
+  thead th:nth-child(4) { width: 17%; }
+  thead th:nth-child(5) { width: 35%; }
+  .album-cell {
+    width: 95px;
+    padding: 0;
+  }
+  .album-cell img,
+  .album-image {
+    max-width: 68px;
+    max-height: 55px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+    display: block;
+  }
+  th {
+    border-top: transparent;
+    border-right: transparent;
+    border-left: transparent;
+    }
+  .album-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .correct {
+    background-color: #2ecc71;
+    box-shadow: 0px 0px 57px -5px rgba(46,204,113,1);
+  }
+  .arrow-up::after {
+    content: "∧";
+    color: #fff;
+    font-weight: bold;
+    font-family: SimSun;
+  }
+  .arrow-down::after {
+    content: "∨";
+    color: #fff;
+    font-weight: bold;
+    font-family: SimSun;
+  }
+  .neighbor {
+    background-color: #f1c40f;
+    box-shadow: 0px 0px 57px -5px rgba(241,196,15,1);
+  }
+  .neighbor.arrow-up::after { content: "∧"; color: #fff; }
+  .neighbor.arrow-down::after { content: "∨"; color: #fff; }
+  p {
+    font-family: SimSun;
+    font-size: 20px;
+    text-shadow: 1px 1px rgb(255,0,0);
+  }
+  h2 { font-size: small; }
+  #suggestionsList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    color: white;
+  }
+  #suggestionsList li {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+  }
+  #suggestionsList li:hover { background-color: #333; }
+  .modal-content {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: SimSun;
+    position: relative;
+    box-shadow: 0px 0px 57px -20px rgba(255,255,255,1);
+  }
+  .modal-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  #welcomeModal {
+    display: flex;
+  }
+  #instructionsModal,
+  #endGameModal {
+    display: none;
+  }
+  #instructionsList {
+    list-style: disc;
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  #instructionsList li {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  #instructionsModal .modal-content {
+    min-height: 400px;
+    padding-top: 20px;
+  }
+  .highlight-green {
+    background-color: #2ecc71;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #fff;
+  }
+  .highlight-yellow {
+    background-color: #f1c40f;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #000;
+  }
+  #albumCover {
+    max-width: 150px;
+    display: none;
+    margin: 10px auto;
+    box-shadow: 0px 0px 57px -20px rgba(255,255,255,1);
+  }
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 15px;
+  }
+  #startList{
+    font-size: large;
+  }
+  .stats-container .stat-item:nth-child(1) { order: 1; }
+  .stats-container .stat-item:nth-child(2) { order: 2; }
+  .stats-container .stat-item:nth-child(3) { order: 3; }
+  .stats-container .stat-best { order: 4; }
+  .stat-item, .stat-best {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  .stat-square, .stat-best .stat-square {
+    background-color: rgb(255,0,0);
+    box-shadow: 0px 0px 10px rgba(255,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #supportUsButton {
+    margin: 10px;
+    padding: 8px 12px;
+    background-color: #b33fa3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  #supportUsButton:hover { background-color: #ff00d4; }
+  #showResultsButton {
+    display: none;
+    width: 25%;
+    padding: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    font-size: larger;
+    cursor: pointer;
+    margin: auto;
+    justify-content: center;
+    font-family: SimSun;
+  }
+  .napis {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+  @keyframes rowFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: rowFadeIn 0.3s ease-out; }
+  #finalSongName {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  #finalFeatures {
+    font-size: 16px;
+    color: #aaa;
+    margin-top: 0;
+  }
+  #donationContainer {
+    margin-top: 30px;
+  }
+  .album-divider {
+    width: 96%;
+    overflow: hidden;
+    margin: 20px 0;
+    padding-block: 5px;
+    border-block: 1px solid;
+    user-select: none;
+    display: flex;
+  }
+  .album-divider .marquee {
+    display: flex;
+    gap: 20px;
+    animation: marquee 10s linear infinite reverse;
+  }
+  .album-divider .marquee img {
+    width: 50px;
+    height: auto;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  #iconsContainer { 
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    gap: 15px;
+    z-index: 9999;
+    max-width: 10%;  
+}
+  
+#iconsContainer img {
+    max-width: 100%;    
+    width: 60px;
+    height: auto;      
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    filter: brightness(0.7);
+}
+  
+#iconsContainer img:hover {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+  
+
+.share-score-button {
+  width: 30%;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-size: larger;
+  cursor: pointer;
+  margin: 20px auto;  
+  display: flex;
+  justify-content: center;
+  font-family: SimSun;
+  box-shadow: 0px 0px 57px -16px rgba(255,255,255,1);
+}
+
+.share-score-button:hover {
+  background-color: #1d1c1d;
+}
+
+
+.copy-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2ecc71;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  z-index: 1000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 0px 57px -5px rgba(46,204,113,1);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out; 
+}

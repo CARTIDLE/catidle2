@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Cartidle - Guess the Playboi Carti Song</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" media="screen" href="styl.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="iconsContainer">
+    <img id="infoIcon" src="info.png" alt="Info Icon">
+    <img id="donateIcon" src="donateicon.png" alt="Donate Icon">
+  </div>
+  <img src="napis.png" class="napis">
+  <div id="container">
+    <p><b>Guess the Playboi Carti song</b></p>
+    <input type="text" id="guessInput" placeholder="Enter a song title" oninput="showSuggestions()" /><br>
+    <ul id="suggestionsList"></ul>
+    <button id="guessButton">Guess</button><br>
+    <button id="showResultsButton">Show Results</button><br>
+    <div id="result"></div>
+  </div>
+  
+  <div class="tabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Album</th>
+          <th>Track No.</th>
+          <th>Track Length</th>
+          <th>Features</th>
+        </tr>
+      </thead>
+      <tbody id="guessesTable"></tbody>
+    </table>
+  </div>
+  <div id="donateModal" class="modal-wrapper" style="display: none;">
+    <div class="modal-content">
+      <h1><span style="color: red;">❤️</span>Support<span style="color: red;">❤️</span></h1>
+      <p>Cartidle is my first project so there may be some minor errors also some things may not work as expected if you notice any you can write to me on X 
+        (<a href="https://x.com/CARTIDLE">https://x.com/CARTIDLE</a>).</p>
+        <p> Also if you have any ideas on how to add something to the game or change it, you can write to me and I will consider every idea.</p>
+        <p>If you want cartidle to work and if you enjoy the game consider supporting me by donating.</p>
+        <button id="supportUsButton">Support me</button>
+    </div>
+  </div>
+  <div id="endGameModal" class="modal-wrapper">
+    <div class="modal-content" id="endGameContent">
+      <h1 id="endGameTitle">Game Over!</h1>
+      <img id="albumCover" src="" alt="Album Cover">
+      <p id="finalSongName"></p>
+      <p id="finalFeatures"></p>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-label">GAMES PLAYED</div>
+          <div class="stat-square"><span id="gamesPlayed">0</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">CORRECT GUESSES</div>
+          <div class="stat-square"><span id="correctGuesses">0</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">WIN STREAK</div>
+          <div class="stat-square"><span id="winStreak">0</span></div>
+        </div>
+        <div class="stat-best">
+          <div class="stat-label">BEST WIN STREAK</div>
+          <div class="stat-square"><span id="bestWinStreak">0</span></div>
+        </div>
+      </div>
+      <div class="album-divider">
+        <div class="marquee">
+          <img src="photo/wholelottared.jpg" alt="Album 1">
+          <img src="photo/dieeelittt.jpg" alt="Album 2">
+          <img src="photo/selftitled.jpg" alt="Album 3">
+          <img src="photo/iammusic.jpg" alt="Album 4">
+        </div>
+      </div>
+      <div id="donationContainer">
+        <p style="margin-top: 10px;">
+          Consider donating to help keep Cartidle running! 
+        </p>
+        <button id="supportUsButton">Support me</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="welcomeModal" class="modal-wrapper">
+    <div class="modal-content" id="welcomeContent">
+      <h1>Welcome to Cartidle!</h1>
+    </div>
+  </div>
+  
+  <div id="instructionsModal" class="modal-wrapper">
+    <div class="modal-content" id="instructionsContent">
+      <h2 id="startList">Few things before you start</h2>
+      <div id="albumImages" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+        <img src="photo/selftitled.jpg" alt="Album Selftitled" style="width: 80px; height: auto;">
+        <img src="photo/dieeelittt.jpg" alt="Album Dieeelittt" style="width: 80px; height: auto;">
+        <img src="photo/wholelottared.jpg" alt="Album Whole Lotta Red" style="width: 80px; height: auto;">
+        <img src="photo/iammusic.jpg" alt="Album Music" style="width: 80px; height: auto;">
+      </div>
+      <ul id="instructionsList">
+        <li>You have eight attempts to guess any Playboi Carti song.</li>
+        <li>If the column is <span class="highlight-green">green</span> it means you have found the perfect connection!</li>
+        <li>If there is a <span class="highlight-yellow">yellow</span> colour in the Album or Track No. column, it means that within 1 album or track with an arrow indicating whether it is higher ∧ or lower ∨.</li>
+        <li>But if the colour in the track length column is <span class="highlight-yellow">yellow</span>, it means that the track is within 15 seconds with an arrow indicating whether it is higher ∧ or lower ∨.</li>
+        <li>If the features column is <span class="highlight-yellow">yellow</span>, it means that this artist is correct but is on a different song.</li>
+        <p id="finalMessage">Good Luck Have Fun!</p>
+        <small>Note: If you have played before your stats are saved</small>
+      </ul>
+    </div>
+  </div>
+  
+  <footer style="position: fixed; bottom: 10px; left: 10px; color: white;">
+    <h2>Inspired by <a href="https://yeezle.xyz" style="color: #e50914; text-decoration: none;">YEEZLE</a></h2>
+  </footer>
+</body>
+</html>
