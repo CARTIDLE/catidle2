@@ -403,35 +403,47 @@ body {
       margin: 0 auto;
   }
   
-  /* Input field adjustments */
+  /* Input field adjustments - keeping it similar */
   input {
-      width: 80%;
+      width: 60%;
   }
   
-  /* Button adjustments */
+  /* Button adjustments - keeping more like original */
   #guessButton, #showResultsButton {
-      width: 60%;
+      width: 25%;
       font-size: 16px;
   }
   
-  /* Table adjustments */
+  /* Table adjustments - major focus */
   .tabela {
       overflow-x: auto;
       padding: 0 5px;
   }
   
   table {
-      width: 100%;
-      font-size: 14px;
+      width: 95%;
+      font-size: 12px;
   }
   
   th, td {
-      padding: 5px;
+      padding: 3px;
+  }
+  
+  thead th:nth-child(1) { width: 20%; }
+  thead th:nth-child(2) { width: 15%; }
+  thead th:nth-child(3) { width: 15%; }
+  thead th:nth-child(4) { width: 15%; }
+  thead th:nth-child(5) { width: 35%; }
+  
+  .album-cell img,
+  .album-image {
+      max-width: 45px;
+      max-height: 45px;
   }
   
   /* Logo adjustments */
   .napis {
-      width: 90%;
+      width: 85%;
       max-width: 400px;
   }
   
@@ -462,15 +474,6 @@ body {
       min-width: 100px;
   }
   
-  .stat-label {
-      font-size: 12px;
-  }
-  
-  .stat-square {
-      padding: 5px 10px;
-      font-size: 16px;
-  }
-  
   /* Album images in instructions */
   #albumImages {
       flex-wrap: wrap;
@@ -479,49 +482,32 @@ body {
   #albumImages img {
       width: 60px;
   }
-  
-  /* Instructions list */
-  #instructionsList li {
-      font-size: 14px;
-      margin-bottom: 8px;
-  }
-  
-  /* Share button */
-  .share-score-button {
-      width: 60%;
-  }
-  
-  /* Footer adjustment */
-  footer {
-      font-size: 12px;
-  }
 }
 
 /* Even smaller screens */
 @media screen and (max-width: 480px) {
-  /* Further adjustments for very small screens */
+  /* Further table size reduction */
   table {
-      font-size: 12px;
+      width: 100%;
+      font-size: 10px;
   }
   
   th, td {
-      padding: 3px;
+      padding: 2px;
   }
   
   .album-cell img,
   .album-image {
-      max-width: 40px;
-      max-height: 40px;
+      max-width: 30px;
+      max-height: 30px;
   }
   
+  /* Keep buttons closer to original */
   #guessButton, #showResultsButton {
-      width: 80%;
+      width: 35%;
   }
   
-  .stat-item, .stat-best {
-      flex: 1 0 45%;
-  }
-  
+  /* Modal content for very small screens */
   .modal-content {
       padding: 10px;
   }
@@ -538,12 +524,24 @@ body {
       font-size: 12px;
   }
   
-  #startList {
-      font-size: 16px;
+  input {
+      width: 70%;
+  }
+}
+
+/* Fix for table on very small screens */
+@media screen and (max-width: 380px) {
+  table {
+      font-size: 9px;
   }
   
-  .share-score-button {
-      width: 80%;
-      font-size: 16px;
+  th, td {
+      padding: 1px;
+  }
+  
+  .album-cell img,
+  .album-image {
+      max-width: 25px;
+      max-height: 25px;
   }
 }
