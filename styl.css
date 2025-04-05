@@ -385,3 +385,165 @@ body {
   opacity: 0;
   transition: opacity 0.2s ease-in-out; 
 }
+@media screen and (max-width: 768px) {
+  /* Icon container adjustments */
+  #iconsContainer {
+      top: 10px;
+      right: 10px;
+      gap: 10px;
+  }
+  
+  #iconsContainer img {
+      width: 30px; 
+  }
+  
+  /* Main container adjustments */
+  #container {
+      width: 95%;
+      margin: 0 auto;
+  }
+  
+  /* Input field adjustments */
+  input {
+      width: 80%;
+  }
+  
+  /* Button adjustments */
+  #guessButton, #showResultsButton {
+      width: 60%;
+      font-size: 16px;
+  }
+  
+  /* Table adjustments */
+  .tabela {
+      overflow-x: auto;
+      padding: 0 5px;
+  }
+  
+  table {
+      width: 100%;
+      font-size: 14px;
+  }
+  
+  th, td {
+      padding: 5px;
+  }
+  
+  /* Logo adjustments */
+  .napis {
+      width: 90%;
+      max-width: 400px;
+  }
+  
+  /* Modal adjustments */
+  .modal-content {
+      width: 90%;
+      max-width: 400px;
+      padding: 15px;
+      margin: 0 auto;
+  }
+  
+  #albumCover {
+      max-width: 120px;
+  }
+  
+  #finalSongName {
+      font-size: 24px;
+  }
+  
+  /* Stats container adjustments */
+  .stats-container {
+      flex-wrap: wrap;
+      gap: 10px;
+  }
+  
+  .stat-item, .stat-best {
+      flex: 1 0 40%;
+      min-width: 100px;
+  }
+  
+  .stat-label {
+      font-size: 12px;
+  }
+  
+  .stat-square {
+      padding: 5px 10px;
+      font-size: 16px;
+  }
+  
+  /* Album images in instructions */
+  #albumImages {
+      flex-wrap: wrap;
+  }
+  
+  #albumImages img {
+      width: 60px;
+  }
+  
+  /* Instructions list */
+  #instructionsList li {
+      font-size: 14px;
+      margin-bottom: 8px;
+  }
+  
+  /* Share button */
+  .share-score-button {
+      width: 60%;
+  }
+  
+  /* Footer adjustment */
+  footer {
+      font-size: 12px;
+  }
+}
+
+/* Even smaller screens */
+@media screen and (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  table {
+      font-size: 12px;
+  }
+  
+  th, td {
+      padding: 3px;
+  }
+  
+  .album-cell img,
+  .album-image {
+      max-width: 40px;
+      max-height: 40px;
+  }
+  
+  #guessButton, #showResultsButton {
+      width: 80%;
+  }
+  
+  .stat-item, .stat-best {
+      flex: 1 0 45%;
+  }
+  
+  .modal-content {
+      padding: 10px;
+  }
+  
+  #finalSongName {
+      font-size: 20px;
+  }
+  
+  #finalFeatures {
+      font-size: 14px;
+  }
+  
+  #instructionsList li {
+      font-size: 12px;
+  }
+  
+  #startList {
+      font-size: 16px;
+  }
+  
+  .share-score-button {
+      width: 80%;
+      font-size: 16px;
+  }
+}
